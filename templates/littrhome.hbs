@@ -2,20 +2,36 @@
   <h1>Littr<small> Connect with other felines. Talk shit about dogs.</small></h1>
 
   <ul class="list-unstyled">
-    {{#each meep in meeps}}
-      <li class="well"><h6><img src="css/img/cat4.jpg" class="userpic">-<strong>{{meep.user}}:</strong> {{meep.meep}}</h6></li>
+    {{#each}}
+
+      <div {{action 'showDate' on='mouseDown'}} class="row well">
+        <li>
+          <div class="col-sm-2">
+            <img {{bind-attr src=image}} class="col-md-1 userpic">
+          </div>
+          <div class="col-sm-10">
+            <h5><strong>{{user}}</strong> <br>{{meep}}</h5>
+          </div>
+        </li>
+        {{#if showDate}}
+        <div class="well">
+          {{date}}
+        </div>
+        {{/if}}
+      </div>
+
+
     {{/each}}
   </ul>
 
-  <form class="well">
+  <form class="form- well">
     <h5>Add a meep</h5>
     <div class="form-group">
-      <label for="user">Username:</label>
-      {{input name="user" type='text' value=user}}<br>
-      <label for="meep">Meep:</label>
-      {{input name="meep" type='text' value=meep}}
-    </div>
+      <label for="user" class="col-sm-2">Username:</label>
+      {{input name="user" type='text' value=user class="col-sm-10"}}
+      <label for="meep" class="col-sm-2">Meep:</label>
+      {{textarea name="meep" type='text' value=meep columns="40" maxlength="141" class="col-sm-10"}}
+    </div><br>
       <button {{action 'addMeep'}} class="btn btn-success">Meep</button>
   </form>
-
 </div>

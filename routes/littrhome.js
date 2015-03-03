@@ -1,5 +1,5 @@
 Littr.LittrhomeRoute = Ember.Route.extend({
   model: function(){
-    return data;
+    return data.meeps;
   }
 });

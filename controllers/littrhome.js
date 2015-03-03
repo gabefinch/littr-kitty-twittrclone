@@ -1,4 +1,7 @@
-Littr.LittrhomeController = Ember.ObjectController.extend({
+Littr.LittrhomeController = Ember.ArrayController.extend({
+  itemController: 'meep',
+  sortProperties: ['date'],
+  sortAscending: false,
   actions: {
     addMeep: function() {
       var newUser = this.get('user');
@@ -9,6 +12,8 @@ Littr.LittrhomeController = Ember.ObjectController.extend({
         date: new Date,
         image: ''
       };
+      this.set('user', "");
+      this.set('meep', "");
       data.meeps.addObject(newObject);
     }
   }
