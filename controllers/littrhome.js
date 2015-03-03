@@ -1,3 +1,3 @@
-Littr.LittrhomeController = Ember.Controller.extend({
+Littr.LittrhomeController = Ember.ArrayController.extend({
 
 });
