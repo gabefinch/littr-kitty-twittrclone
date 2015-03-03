@@ -1,0 +1,1 @@
+Littr = Ember.Application.create();
