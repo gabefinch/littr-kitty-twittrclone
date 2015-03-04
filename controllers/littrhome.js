@@ -17,6 +17,7 @@ Littr.LittrhomeController = Ember.ArrayController.extend({
         user: newUser,
         meep: newMeep,
         date: new Date,
+        reply: '',
         image: imageTag
       };
       this.set('user', "");
